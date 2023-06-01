@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+	<title>Encriptador de texto con Javascript</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+
+	<header>
+		<img src="img/VectorAlura.png" class="imgAlura">
+	</header>
+
+	<main>
+		<div class="principal">
+			<section class="contenedorEsribir">
+				<div class="textoIngrese">
+					<textarea  id="inputTexto" placeholder="Ingrese el texto aquí"></textarea>
+				</div>
+				<div class="botones">
+					<div class="textoAyuda">
+						<img src="../img/Vector.png">
+						<p>Solo letras minúsculas y sin acentos</p>
+					</div>
+					<button id="botonEncriptar">Encriptar</button>
+					<button id="botonDesencriptar">Desencriptar</button>
+				</div>
+			</section>
+			<section class="contenedorResultado">
+				<div class="contenedorDerecha">
+					<img src="../img/Muñeco.png" id="imgMune">
+					<h1 id="ningunMensaje">Ningún mensaje fue encontrado</h1>
+					<p id="ningunTexto">Ingresa el texto que deseas encryptar o desencryptar</p>
+					<div id="spanEscribe"></div>
+				</div>
+			</section>
+		</div>
+	</main>
+	
+	<script src="js/main.js"></script>
+
+</body>
+</html>
