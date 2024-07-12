@@ -1,48 +1,75 @@
 <!DOCTYPE html>
 
 <html lang="es">
+  <head>
+    <title>Encriptador de texto con Javascript</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="input.css" /> -->
+    <!-- <link rel="stylesheet" href="reset.css" /> -->
+  </head>
+  <body
+    class="h-screen flex flex-col items-center justify-center px-4 py-4 bg-blue-50"
+  >
+    <header class="absolute top-10 left-10">
+      <img src="img/VectorAlura.png" class="imgAlura" />
+    </header>
+    <main class="h-screen flex">
+      <div class="flex lg:gap-x-20">
+        <section class="flex flex-col justify-around">
+          <!-- h-72 texto -->
+          <div class="">
+            <textarea
+              id="inputTexto"
+              placeholder="Ingrese el texto aquí"
+              class="placeholder:text-sky-800 text-3xl bg-blue-50 resize-y w-full h-40"
+            ></textarea>
+          </div>
+          <!-- h-75 botones -->
+          <div class="flex flex-col justify-end">
+            <div class="textoAyuda flex items-center mb-4">
+              <img src="./img/Vector.png" class="pr-2" />
+              <p class="text-gray-400">Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div>
+              <button
+                id="botonEncriptar"
+                class="bg-blue-900 w-80 h-16 rounded-3xl text-slate-50 border-2 border-blue-900"
+              >
+                Encriptar
+              </button>
+              <button
+                id="botonDesencriptar"
+                class="bg-blue-100 w-80 h-16 rounded-3xl text-neutral-900 border-2 border-blue-900"
+              >
+                Desencriptar
+              </button>
+            </div>
+          </div>
+        </section>
 
-<head>
-	<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-	<title>Encriptador de texto con Javascript</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="reset.css">
-</head>
+        <!-- foto -->
+        <section
+          class="bg-slate-50 rounded-3xl flex items-center justify-center w-80"
+        >
+          <div class="flex flex-col items-center text-center">
+            <img src="./img/Muñeco.png" id="imgMune" class="" />
+            <h1 id="ningunMensaje" class="text-2xl font-bold px-10">
+              Ningún mensaje fue encontrado
+            </h1>
+            <p id="ningunTexto">
+              Ingresa el texto que deseas encryptar o desencryptar
+            </p>
+            <div class="flex flex-col">
+              <span id="spanEscribe"></span>
+              <span id="spanBoton"></span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
 
-<body>
-
-	<header>
-		<img src="img/VectorAlura.png" class="imgAlura">
-	</header>
-
-	<main>
-		<div class="principal">
-			<section class="contenedorEsribir">
-				<div class="textoIngrese">
-					<textarea  id="inputTexto" placeholder="Ingrese el texto aquí"></textarea>
-				</div>
-				<div class="botones">
-					<div class="textoAyuda">
-						<img src="./img/Vector.png">
-						<p>Solo letras minúsculas y sin acentos</p>
-					</div>
-					<button id="botonEncriptar">Encriptar</button>
-					<button id="botonDesencriptar">Desencriptar</button>
-				</div>
-			</section>
-			<section class="contenedorResultado">
-				<div class="contenedorDerecha">
-					<img src="./img/Muñeco.png" id="imgMune">
-					<h1 id="ningunMensaje">Ningún mensaje fue encontrado</h1>
-					<p id="ningunTexto">Ingresa el texto que deseas encryptar o desencryptar</p>
-					<div id="spanEscribe"></div>
-				</div>
-			</section>
-		</div>
-	</main>
-	
-	<script src="main.js"></script>
-
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

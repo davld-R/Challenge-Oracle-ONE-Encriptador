@@ -1,4 +1,7 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* body {
 	background-color: #E5E5E5;
 }
 
@@ -194,4 +197,4 @@ body {
 	.contenedorResultado {
 		width: 20%;
 	}
-}
+} */

@@ -1,11 +1,3 @@
-const botonEncriptar = document.getElementById("botonEncriptar");
-const botonDesencriptar = document.getElementById("botonDesencriptar");
-const inputTexto = document.getElementById("inputTexto");
-const spanEscribe = document.getElementById("spanEscribe");
-const imgMune = document.getElementById("imgMune");
-const ningunMensaje = document.getElementById("ningunMensaje");
-const ningunTexto = document.getElementById("ningunTexto");
-
 // Las "llaves" de encriptación que utilizaremos son las siguientes:
 
 // La letra "e" es convertida para "enter"
@@ -23,6 +15,16 @@ const ningunTexto = document.getElementById("ningunTexto");
 // "gato" => "gaitober"
 // gaitober" => "gato"
 
+const botonEncriptar = document.getElementById("botonEncriptar");
+
+const botonDesencriptar = document.getElementById("botonDesencriptar");
+const inputTexto = document.getElementById("inputTexto");
+const spanEscribe = document.getElementById("spanEscribe");
+const spanBoton = document.getElementById("spanBoton");
+const imgMune = document.getElementById("imgMune");
+const ningunMensaje = document.getElementById("ningunMensaje");
+const ningunTexto = document.getElementById("ningunTexto");
+
 let arreglo = [];
 let arreglo2 = [];
 let arreglo3 = [];
@@ -30,12 +32,11 @@ let arreglo4 = [];
 let x = 0;
 let c = 0;
 
-
-
 function desencriptar() {
   arreglo3.push(inputTexto.value);
+
   arreglo4.push([]);
-  let contador = 0;  
+  let contador = 0;
 
   for (let i = c; i < arreglo3.length; i++) {
     let palabraDesencriptada = arreglo3[i];
@@ -47,7 +48,10 @@ function desencriptar() {
         desencriptado += "e";
         arreglo4[c].push(desencriptado);
         i = i + 4;
-      } else if (letra === "i" && palabraDesencriptada.substr(i, 4) === "imes") {
+      } else if (
+        letra === "i" &&
+        palabraDesencriptada.substr(i, 4) === "imes"
+      ) {
         desencriptado += "i";
         arreglo4[c].push(desencriptado);
         i = i + 3;
@@ -55,11 +59,17 @@ function desencriptar() {
         desencriptado += "a";
         arreglo4[c].push(desencriptado);
         i = i + 1;
-      } else if (letra === "o" && palabraDesencriptada.substr(i, 4) === "ober") {
+      } else if (
+        letra === "o" &&
+        palabraDesencriptada.substr(i, 4) === "ober"
+      ) {
         desencriptado += "o";
         arreglo4[c].push(desencriptado);
         i = i + 3;
-      } else if (letra === "u" && palabraDesencriptada.substr(i, 4) === "ufat") {
+      } else if (
+        letra === "u" &&
+        palabraDesencriptada.substr(i, 4) === "ufat"
+      ) {
         desencriptado += "u";
         arreglo4[c].push(desencriptado);
         i = i + 3;
@@ -73,26 +83,27 @@ function desencriptar() {
   contador = contador - 1;
   let cadena = arreglo4[c][contador];
   contador = 0;
-   
-	imgMune.remove();
-	ningunMensaje.remove();
-	ningunTexto.remove();
-	spanEscribe.textContent = cadena;
 
-	const botonCopiar = document.createElement("button");
+  imgMune.remove();
+  ningunMensaje.remove();
+  ningunTexto.remove();
+  spanEscribe.textContent = cadena;
+
+  const botonCopiar = document.createElement("button");
   botonCopiar.textContent = "Copiar";
-	botonCopiar.id = "botonCopiar";
+  botonCopiar.id = "botonCopiar";
   spanEscribe.appendChild(botonCopiar);
 
-	document.getElementById("botonCopiar").onclick = function() {
-		navigator.clipboard.writeText(cadena)
-	}
+  document.getElementById("botonCopiar").onclick = function () {
+    navigator.clipboard.writeText(cadena);
+  };
 
   c++;
 }
 
 function encriptar() {
   arreglo.push(inputTexto.value);
+  console.log(arreglo);
   arreglo2.push([]);
   for (let i = x; i < arreglo.length; i++) {
     let palabra = arreglo[i];
@@ -119,26 +130,24 @@ function encriptar() {
     }
   }
   let cadena = arreglo2[x].join("");
-  
-	imgMune.remove();
-	ningunMensaje.remove();
-	ningunTexto.remove();
-	spanEscribe.textContent = cadena;
 
-	const botonCopiar = document.createElement("button");
+  imgMune.remove();
+  ningunMensaje.remove();
+  ningunTexto.remove();
+  spanEscribe.textContent = cadena;
+
+  const botonCopiar = document.createElement("button");
   botonCopiar.textContent = "Copiar";
-	botonCopiar.id = "botonCopiar";
-  spanEscribe.appendChild(botonCopiar);
+  botonCopiar.id = "botonCopiar";
+  botonCopiar.className = "";
+  spanBoton.appendChild(botonCopiar);
 
-	document.getElementById("botonCopiar").onclick = function() {
-		navigator.clipboard.writeText(cadena)
-	}
+  document.getElementById("botonCopiar").onclick = function () {
+    navigator.clipboard.writeText(cadena);
+  };
 
   x++;
 }
 
 botonEncriptar.onclick = encriptar;
 botonDesencriptar.onclick = desencriptar;
-
-
-
