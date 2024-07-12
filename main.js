@@ -89,7 +89,8 @@ function desencriptar() {
   imgMune.remove();
   ningunMensaje.remove();
   ningunTexto.remove();
-  spanEscribe.className = "px-11 text-xl h-96 resize-none bg-slate-50 block";
+  spanEscribe.className =
+    "px-11 text-xl h-96 resize-none bg-slate-50 block dark:bg-gray-800 focus:outline-0";
   spanEscribe.textContent = cadena;
 
   if (estado == true) {
@@ -142,7 +143,8 @@ function encriptar() {
   imgMune.remove();
   ningunMensaje.remove();
   ningunTexto.remove();
-  spanEscribe.className = "px-11 text-xl h-96 resize-none bg-slate-50 block";
+  spanEscribe.className =
+    "px-11 text-xl h-96 resize-none bg-slate-50 block dark:bg-gray-800 focus:outline-0";
   spanEscribe.textContent = cadena;
 
   if (estado == true) {
@@ -150,7 +152,7 @@ function encriptar() {
     botonCopiar.textContent = "Copiar";
     botonCopiar.id = "botonCopiar";
     botonCopiar.className =
-      "border border-blue-900 mx-8 rounded-3xl h-16 flex justify-center items-center cursor-pointer w-64";
+      "border border-blue-900 mx-8 rounded-3xl h-16 flex justify-center items-center cursor-pointer w-64 dark:bg-slate-50 dark:text-gray-800 ";
 
     spanBoton.appendChild(botonCopiar);
     estado = false;

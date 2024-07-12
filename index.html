@@ -3,26 +3,26 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="img/VectorAlura.ico" />
+    <link rel="icon" type="image/svg+xml" href=".img/VectorAlura.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Encriptador de texto con Javascript</title>
   </head>
   <body
-    class="h-screen flex flex-col items-center justify-center px-4 py-4 bg-blue-50"
+    class="h-screen flex flex-col items-center justify-center px-4 py-4 bg-blue-50 dark:bg-slate-900"
   >
     <header class="absolute top-10 left-10">
-      <img src="img/VectorAlura.png" class="imgAlura" />
+      <img src="img/VectorAlura.png" class="animate-bounce" />
     </header>
     <main class="h-screen flex">
-      <div class="flex lg:gap-x-20">
+      <div class="flex gap-x-20">
         <section class="flex flex-col justify-around">
           <!-- h-72 texto -->
           <div class="">
             <textarea
               id="inputTexto"
               placeholder="Ingrese el texto aquí"
-              class="placeholder:text-sky-800 text-3xl bg-blue-50 resize-y w-full h-40"
+              class="dark:bg-slate-900 dark:text-slate-50 dark:placeholder:text-slate-50 placeholder:text-sky-800 text-3xl bg-blue-50 resize-none w-full h-80 text-sky-800 focus:outline-0"
             ></textarea>
           </div>
           <!-- h-75 botones -->
@@ -31,16 +31,16 @@
               <img src="./img/Vector.png" class="pr-2" />
               <p class="text-gray-400">Solo letras minúsculas y sin acentos</p>
             </div>
-            <div>
+            <div class="flex flex-wrap">
               <button
                 id="botonEncriptar"
-                class="bg-blue-900 w-80 h-16 rounded-3xl text-slate-50 border-2 border-blue-900 mr-4"
+                class="bg-blue-900 w-80 h-16 rounded-3xl text-slate-50 border-2 border-blue-900 mr-4 max-xl:w-60 max-lg:w-40"
               >
                 Encriptar
               </button>
               <button
                 id="botonDesencriptar"
-                class="bg-blue-100 w-80 h-16 rounded-3xl text-neutral-900 border-2 border-blue-900"
+                class="bg-blue-100 w-80 h-16 rounded-3xl text-neutral-900 border-2 border-blue-900 max-xl:w-60 max-lg:w-40"
               >
                 Desencriptar
               </button>
@@ -50,10 +50,10 @@
 
         <!-- foto -->
         <section
-          class="bg-slate-50 rounded-3xl flex items-center justify-center w-80"
+          class="dark:bg-gray-800 dark:text-slate-50 bg-slate-50 rounded-3xl flex items-center justify-center w-80"
         >
           <div class="flex flex-col items-center text-center">
-            <img src="./img/Muñeco.png" id="imgMune" class="" />
+            <img src="./img/Muñeco.png" id="imgMune" class="pb-10" />
             <h1 id="ningunMensaje" class="text-2xl font-bold px-10">
               Ningún mensaje fue encontrado
             </h1>
