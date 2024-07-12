@@ -20,6 +20,7 @@ const botonEncriptar = document.getElementById("botonEncriptar");
 const botonDesencriptar = document.getElementById("botonDesencriptar");
 const inputTexto = document.getElementById("inputTexto");
 const spanEscribe = document.getElementById("spanEscribe");
+const textAreaEscribe = document.getElementById("textAreaEscribe");
 const spanBoton = document.getElementById("spanBoton");
 const imgMune = document.getElementById("imgMune");
 const ningunMensaje = document.getElementById("ningunMensaje");
@@ -31,6 +32,7 @@ let arreglo3 = [];
 let arreglo4 = [];
 let x = 0;
 let c = 0;
+let estado = true;
 
 function desencriptar() {
   arreglo3.push(inputTexto.value);
@@ -87,12 +89,18 @@ function desencriptar() {
   imgMune.remove();
   ningunMensaje.remove();
   ningunTexto.remove();
+  spanEscribe.className = "px-11 text-xl h-96 resize-none bg-slate-50 block";
   spanEscribe.textContent = cadena;
 
-  const botonCopiar = document.createElement("button");
-  botonCopiar.textContent = "Copiar";
-  botonCopiar.id = "botonCopiar";
-  spanEscribe.appendChild(botonCopiar);
+  if (estado == true) {
+    const botonCopiar = document.createElement("button");
+    botonCopiar.textContent = "Copiar";
+    botonCopiar.id = "botonCopiar";
+    botonCopiar.className =
+      "border border-blue-900 mx-8 rounded-3xl h-16 flex justify-center items-center cursor-pointer w-64";
+    spanBoton.appendChild(botonCopiar);
+    estado = false;
+  }
 
   document.getElementById("botonCopiar").onclick = function () {
     navigator.clipboard.writeText(cadena);
@@ -134,13 +142,19 @@ function encriptar() {
   imgMune.remove();
   ningunMensaje.remove();
   ningunTexto.remove();
+  spanEscribe.className = "px-11 text-xl h-96 resize-none bg-slate-50 block";
   spanEscribe.textContent = cadena;
 
-  const botonCopiar = document.createElement("button");
-  botonCopiar.textContent = "Copiar";
-  botonCopiar.id = "botonCopiar";
-  botonCopiar.className = "";
-  spanBoton.appendChild(botonCopiar);
+  if (estado == true) {
+    const botonCopiar = document.createElement("button");
+    botonCopiar.textContent = "Copiar";
+    botonCopiar.id = "botonCopiar";
+    botonCopiar.className =
+      "border border-blue-900 mx-8 rounded-3xl h-16 flex justify-center items-center cursor-pointer w-64";
+
+    spanBoton.appendChild(botonCopiar);
+    estado = false;
+  }
 
   document.getElementById("botonCopiar").onclick = function () {
     navigator.clipboard.writeText(cadena);
@@ -151,3 +165,7 @@ function encriptar() {
 
 botonEncriptar.onclick = encriptar;
 botonDesencriptar.onclick = desencriptar;
+
+// imgMune.remove();
+// ningunMensaje.remove();
+// ningunTexto.remove();

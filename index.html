@@ -2,12 +2,11 @@
 
 <html lang="es">
   <head>
-    <title>Encriptador de texto con Javascript</title>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/img/VectorAlura.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link rel="stylesheet" href="input.css" /> -->
-    <!-- <link rel="stylesheet" href="reset.css" /> -->
+    <title>Encriptador de texto con Javascript</title>
   </head>
   <body
     class="h-screen flex flex-col items-center justify-center px-4 py-4 bg-blue-50"
@@ -35,7 +34,7 @@
             <div>
               <button
                 id="botonEncriptar"
-                class="bg-blue-900 w-80 h-16 rounded-3xl text-slate-50 border-2 border-blue-900"
+                class="bg-blue-900 w-80 h-16 rounded-3xl text-slate-50 border-2 border-blue-900 mr-4"
               >
                 Encriptar
               </button>
@@ -61,9 +60,10 @@
             <p id="ningunTexto">
               Ingresa el texto que deseas encryptar o desencryptar
             </p>
-            <div class="flex flex-col">
-              <span id="spanEscribe"></span>
-              <span id="spanBoton"></span>
+            <div class="flex flex-col gap-y-20 flex-wrap">
+              <textarea id="spanEscribe" class="hidden"></textarea>
+
+              <span id="spanBoton" class=""></span>
             </div>
           </div>
         </section>
