@@ -9,38 +9,45 @@
     <title>Encriptador de texto con Javascript</title>
   </head>
   <body
-    class="h-screen flex flex-col items-center justify-center px-4 py-4 bg-blue-50 dark:bg-slate-900"
+    class="h-screen flex flex-col items-center justify-center px-4 py-4 bg-blue-50 dark:bg-slate-900 container mx-auto"
   >
     <header class="absolute top-10 left-10">
-      <img src="img/VectorAlura.png" class="animate-bounce" />
+      <img
+        src="img/VectorAlura.png"
+        class="animate-bounce max-[285px]:hidden"
+      />
     </header>
     <main class="h-screen flex">
-      <div class="flex gap-x-20">
-        <section class="flex flex-col justify-around">
-          <!-- h-72 texto -->
+      <div
+        class="flex gap-x-20 max-[768px]:flex-col max-[768px]:w-screen max-[768px]:px-10 max-[768px]:items-center max-[768px]:justify-center"
+      >
+        <section class="flex flex-col justify-around max-[768px]:w-full">
+          <!-- h-72 mt-32 texto -->
           <div class="">
             <textarea
               id="inputTexto"
               placeholder="Ingrese el texto aquí"
-              class="dark:bg-slate-900 dark:text-slate-50 dark:placeholder:text-slate-50 placeholder:text-sky-800 text-3xl bg-blue-50 resize-none w-full h-80 text-sky-800 focus:outline-0"
+              class="dark:bg-slate-900 dark:text-slate-50 dark:placeholder:text-slate-50 placeholder:text-sky-800 text-3xl bg-blue-50 resize-none w-full h-80 max-[768px]:h-40 text-sky-800 focus:outline-0 max-[768px]:text-xl"
             ></textarea>
           </div>
           <!-- h-75 botones -->
-          <div class="flex flex-col justify-end">
+          <div class="flex flex-col justify-end max-[768px]:mt-4">
             <div class="textoAyuda flex items-center mb-4">
               <img src="./img/Vector.png" class="pr-2" />
               <p class="text-gray-400">Solo letras minúsculas y sin acentos</p>
             </div>
-            <div class="flex flex-wrap">
+            <div
+              class="flex max-[768px]:w-full max-[768px]:justify-center max-[375px]:flex-wrap"
+            >
               <button
                 id="botonEncriptar"
-                class="bg-blue-900 w-80 h-16 rounded-3xl text-slate-50 border-2 border-blue-900 mr-4 max-xl:w-60 max-lg:w-40"
+                class="bg-blue-900 w-80 h-16 rounded-3xl text-slate-50 border-2 border-blue-900 mr-4 max-xl:w-60 max-lg:w-40 max-[768px]:w-full max-[375px]:mr-0"
               >
                 Encriptar
               </button>
               <button
                 id="botonDesencriptar"
-                class="bg-blue-100 w-80 h-16 rounded-3xl text-neutral-900 border-2 border-blue-900 max-xl:w-60 max-lg:w-40"
+                class="max-[375px]:mt-2 bg-blue-100 w-80 h-16 rounded-3xl text-neutral-900 border-2 border-blue-900 max-xl:w-60 max-lg:w-40 max-[768px]:w-full"
               >
                 Desencriptar
               </button>
@@ -50,17 +57,28 @@
 
         <!-- foto -->
         <section
-          class="dark:bg-gray-800 dark:text-slate-50 bg-slate-50 rounded-3xl flex items-center justify-center w-80"
+          class="dark:bg-gray-800 dark:text-slate-50 bg-slate-50 rounded-3xl flex items-center justify-center w-80 max-[768px]:w-full max-[768px]:mt-12"
         >
-          <div class="flex flex-col items-center text-center">
-            <img src="./img/Muñeco.png" id="imgMune" class="pb-10" />
-            <h1 id="ningunMensaje" class="text-2xl font-bold px-10">
+          <div
+            class="flex flex-col items-center text-center max-[768px]:h-32 max-[768px]:justify-center max-[768px]:w-full"
+          >
+            <img
+              src="./img/Muñeco.png"
+              id="imgMune"
+              class="pb-10 max-[768px]:hidden"
+            />
+            <h1
+              id="ningunMensaje"
+              class="text-2xl font-bold px-10 max-[375px]:text-xl"
+            >
               Ningún mensaje fue encontrado
             </h1>
             <p id="ningunTexto">
               Ingresa el texto que deseas encryptar o desencryptar
             </p>
-            <div class="flex flex-col gap-y-20 flex-wrap">
+            <div
+              class="flex flex-col gap-y-20 max-[768px]:gap-y-0 flex-wrap max-[768px]:w-full"
+            >
               <textarea id="spanEscribe" class="hidden"></textarea>
 
               <span id="spanBoton" class=""></span>

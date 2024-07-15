@@ -90,7 +90,7 @@ function desencriptar() {
   ningunMensaje.remove();
   ningunTexto.remove();
   spanEscribe.className =
-    "px-11 text-xl h-96 resize-none bg-slate-50 block dark:bg-gray-800 focus:outline-0";
+    "px-11 text-xl max-[768px]:h-32 h-96 resize-none bg-slate-50 block dark:bg-gray-800 focus:outline-0 max-[768px]:rounded-3xl max-[768px]:p-1";
   spanEscribe.textContent = cadena;
 
   if (estado == true) {
@@ -98,7 +98,7 @@ function desencriptar() {
     botonCopiar.textContent = "Copiar";
     botonCopiar.id = "botonCopiar";
     botonCopiar.className =
-      "border border-blue-900 mx-8 rounded-3xl h-16 flex justify-center items-center cursor-pointer w-64";
+      "max-[768px]:right-0 max-[768px]:absolute max-[768px]:bottom-5 max-[768px]:mt-2 max-[768px]:h-12 border border-blue-900 mx-8 rounded-3xl h-16 flex justify-center items-center cursor-pointer w-64 dark:bg-slate-50 dark:text-gray-800";
     spanBoton.appendChild(botonCopiar);
     estado = false;
   }
@@ -144,7 +144,7 @@ function encriptar() {
   ningunMensaje.remove();
   ningunTexto.remove();
   spanEscribe.className =
-    "px-11 text-xl h-96 resize-none bg-slate-50 block dark:bg-gray-800 focus:outline-0";
+    "px-11 text-xl max-[768px]:h-32 h-96 resize-none bg-slate-50 block dark:bg-gray-800 focus:outline-0 max-[768px]:rounded-3xl max-[768px]:p-1";
   spanEscribe.textContent = cadena;
 
   if (estado == true) {
@@ -152,7 +152,7 @@ function encriptar() {
     botonCopiar.textContent = "Copiar";
     botonCopiar.id = "botonCopiar";
     botonCopiar.className =
-      "border border-blue-900 mx-8 rounded-3xl h-16 flex justify-center items-center cursor-pointer w-64 dark:bg-slate-50 dark:text-gray-800 ";
+      "max-[768px]:right-0 max-[768px]:absolute max-[768px]:bottom-5 max-[768px]:mt-2 max-[768px]:h-12 border border-blue-900 mx-8 rounded-3xl h-16 flex justify-center items-center cursor-pointer w-64 dark:bg-slate-50 dark:text-gray-800";
 
     spanBoton.appendChild(botonCopiar);
     estado = false;
